@@ -30,7 +30,7 @@ class kmeans:
         for example_number in range(1,len(point_map) + 1):
             x_coord = point_map[example_number][0]
             y_coord = point_map[example_number][1]
-            initial_cluster = random.randint(0,3)
+            initial_cluster = random.randint(0,2)
             point = Point(example_number,x_coord,y_coord,initial_cluster)
            ### print(initial_cluster)
             points_list.append(point)
@@ -48,12 +48,22 @@ class kmeans:
                 if point.get_cluster() == id:
                     cluster_points[id].append(point)
 
-            print("Cluster number " + str(id) + " has " + str(len(cluster_points[id])) + " points")
+    def find_closest_centroid(point):
+        distances = [cluster.calculate_distance(point) for cluster in cluster_list]
+        print(len(distances))
+        return 1
+    def run_k_means():
+        i = 0;
+        while(i < 11):
+            for i in range(len(points_list)):
+                closest_centroid = find_closest_centroid(points_list[i])
+                ###points_list[i].cluster_number = closest_centroid
 
     def main():
             print("Testing")
     if __name__ == "__main__":
         generate_points_list()
         generate_clusters()
+        run_k_means()
         main()
 

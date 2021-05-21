@@ -12,7 +12,8 @@ class Cluster:
         return '{}{}{}'.format(self.centroid_x, ',', self.centroid_y)
 
     def calculate_distance(self):
-        np.sqrt(np.sum(x1-x2)**2)
+        print(np.sqrt(np.sum(x1-x2)**2))
+        return np.sqrt(np.sum(x1-x2)**2)
 
     def update_centroid(self):
         return 1
