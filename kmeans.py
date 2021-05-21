@@ -38,7 +38,6 @@ class kMeans:
             for point in self.points_list:
                 if point.get_cluster() == id:
                     self.cluster_points[id].append(point)
-            print(id)
 
     def find_closest_centroid(self,point):
         distances = [cluster.calculate_distance(point) for cluster in self.cluster_list]
@@ -46,7 +45,7 @@ class kMeans:
         return 1
     def run_k_means(self):
         i = 0;
-        while(i < 11):
+        while(i < 1):
             for i in range(len(self.points_list)):
                 closest_centroid = self.find_closest_centroid(self.points_list[i])
                 ###points_list[i].cluster_number = closest_centroid
@@ -54,7 +53,7 @@ class kMeans:
     def start_Kmeans(self):
         self.generate_points_list()
         self.generate_clusters()
-        ###self.run_k_means()
+        self.run_k_means()
 class driverClass:
     def main():
         kmeans = kMeans()
