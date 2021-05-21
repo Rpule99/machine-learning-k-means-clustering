@@ -40,8 +40,15 @@ class kmeans:
             centroid_x = points_list[initial_centroids[id]-1].point_x
             centroid_y = points_list[initial_centroids[id] - 1].point_y
 
-            cluster = Cluster(no_of_clusters,centroid_x,centroid_y)
+            cluster = Cluster(id,centroid_x,centroid_y)
             cluster_list.append(cluster)
+
+            cluster_points[id] = []
+            for point in points_list:
+                if point.get_cluster() == id:
+                    cluster_points[id].append(point)
+
+            print("Cluster number " + str(id) + " has " + str(len(cluster_points[id])) + " points")
 
     def main():
             print("Testing")
