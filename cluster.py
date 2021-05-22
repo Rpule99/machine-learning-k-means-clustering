@@ -19,13 +19,12 @@ class Cluster:
         y2 = self.centroid_y
         # print(str(x1) + "," + str(x2))
         # print("Distance is " + str(np.sqrt(np.sum((x1-x2)**2)))
-        # print(np.sqrt(np.sum([(13-7)**2, (8-4)**2])))
-        return np.sqrt(np.sum([(x2-x1)**2, (y2-y1)**2]))
+        # print(round(np.sqrt(np.sum([(13-7)**2, (8-4)**2])),2))
+        return round(np.sqrt(np.sum([(x2-x1)**2, (y2-y1)**2])),2)
 
     def remove_point(self, point):
-        coordinate = (point.point_x, point.point_y)
-        if self.cluster_points.count(coordinate) != 0:
-            self.cluster_points.remove(coordinate)
+        if self.cluster_points.count(point) != 0:
+            self.cluster_points.remove(point)
 
     def add_point(self, point):
         self.cluster_points.append(point)

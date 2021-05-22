@@ -36,11 +36,15 @@ class kMeans:
             cluster = Cluster(id, centroid_x, centroid_y)
             self.cluster_list.append(cluster)
 
-            self.cluster_points[id] = []
+            # self.cluster_points[id] = []
             for point in self.points_list:
                 if point.get_cluster() == id:
                     self.cluster_list[id].add_point(point)
                     #  self.cluster_points[id].append(point)
+            print("Cluster number " + str(id))
+            for p in self.cluster_list[id].cluster_points:
+                print(p.point_id)
+
 
     def find_closest_centroid(self,point):
         distances = [cluster.calculate_distance(point) for cluster in self.cluster_list]
@@ -58,8 +62,13 @@ class kMeans:
                     self.cluster_list[current_cluster].remove_point(self.points_list[i])  # removes the point from its cluster
                     self.points_list[i].set_cluster_number(closest_centroid)  # update the point's centroid value
                     self.cluster_list[closest_centroid].add_point(self.points_list[i])
-                    self.cluster_list[closest_centroid].update_centroid()
             j = 1
+        for k in range(3):
+            self.cluster_list[k].update_centroid()
+            print("Final for Centroid " + str(k))
+            for pointaa in self.cluster_list[k].cluster_points:
+                print(pointaa.point_id)
+            print("final position " + str(self.cluster_list[k].centroid_x) + "," + str(self.cluster_list[k].centroid_y))
 
     def start_Kmeans(self):
         self.generate_points_list()
