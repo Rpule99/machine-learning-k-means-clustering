@@ -1,3 +1,5 @@
+import numpy as np
+
 from point import Point
 from cluster import Cluster
 import random
@@ -22,7 +24,7 @@ class kMeans:
             x_coord = self.point_map[example_number][0]
             y_coord = self.point_map[example_number][1]
             initial_cluster = random.randint(0,2)
-            point = Point(example_number,x_coord,y_coord,initial_cluster)
+            point = Point(example_number, x_coord, y_coord, initial_cluster)
            ### print(initial_cluster)
             self.points_list.append(point)
 
@@ -37,18 +39,27 @@ class kMeans:
             self.cluster_points[id] = []
             for point in self.points_list:
                 if point.get_cluster() == id:
-                    self.cluster_points[id].append(point)
+                    self.cluster_list[id].add_point()
+                    #  self.cluster_points[id].append(point)
 
     def find_closest_centroid(self,point):
         distances = [cluster.calculate_distance(point) for cluster in self.cluster_list]
-        print(len(distances))
-        return 1
+        closest_centroid = np.argmin(distances)
+        return closest_centroid
+
     def run_k_means(self):
-        i = 0;
-        while(i < 1):
+        j = 0
+        while j < 1:
             for i in range(len(self.points_list)):
                 closest_centroid = self.find_closest_centroid(self.points_list[i])
-                ###points_list[i].cluster_number = closest_centroid
+                current_cluster = self.points_list[i].cluster_number
+                # once I have the id of the closest centroid, I need to update that point's associated cluster
+                if closest_centroid != current_cluster:
+                    self.cluster_list[current_cluster].remove_point()  # removes the point from its cluster
+                    self.points_list[i].set_cluster_number(closest_centroid)  # update the point's centroid value
+                    self.cluster_list[closest_centroid].add_point()
+                    self.cluster_list[closest_centroid].update_centroid()
+            j = 1
 
     def start_Kmeans(self):
         self.generate_points_list()
