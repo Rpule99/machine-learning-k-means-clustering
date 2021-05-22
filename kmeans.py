@@ -39,7 +39,7 @@ class kMeans:
             self.cluster_points[id] = []
             for point in self.points_list:
                 if point.get_cluster() == id:
-                    self.cluster_list[id].add_point()
+                    self.cluster_list[id].add_point(point)
                     #  self.cluster_points[id].append(point)
 
     def find_closest_centroid(self,point):
@@ -55,9 +55,9 @@ class kMeans:
                 current_cluster = self.points_list[i].cluster_number
                 # once I have the id of the closest centroid, I need to update that point's associated cluster
                 if closest_centroid != current_cluster:
-                    self.cluster_list[current_cluster].remove_point()  # removes the point from its cluster
+                    self.cluster_list[current_cluster].remove_point(self.points_list[i])  # removes the point from its cluster
                     self.points_list[i].set_cluster_number(closest_centroid)  # update the point's centroid value
-                    self.cluster_list[closest_centroid].add_point()
+                    self.cluster_list[closest_centroid].add_point(self.points_list[i])
                     self.cluster_list[closest_centroid].update_centroid()
             j = 1
 
@@ -65,6 +65,8 @@ class kMeans:
         self.generate_points_list()
         self.generate_clusters()
         self.run_k_means()
+
+
 class driverClass:
     def main():
         kmeans = kMeans()

@@ -13,3 +13,6 @@ class Point:
 
     def get_cluster(self):
         return self.cluster_number
+
+    def set_cluster_number(self,new_cluster_no):
+        self.cluster_number = new_cluster_no
