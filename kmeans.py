@@ -45,7 +45,6 @@ class kMeans:
             for p in self.cluster_list[id].cluster_points:
                 print(p.point_id)
 
-
     def find_closest_centroid(self,point):
         distances = [cluster.calculate_distance(point) for cluster in self.cluster_list]
         closest_centroid = np.argmin(distances)
@@ -54,17 +53,21 @@ class kMeans:
     def run_k_means(self):
         j = 0
         while j < 1:
-            for i in range(len(self.points_list)):
-                closest_centroid = self.find_closest_centroid(self.points_list[i])
-                current_cluster = self.points_list[i].cluster_number
+            for point in self.points_list:
+                closest_centroid = self.find_closest_centroid(point)
+                current_cluster = point.cluster_number
                 # once I have the id of the closest centroid, I need to update that point's associated cluster
                 if closest_centroid != current_cluster:
-                    self.cluster_list[current_cluster].remove_point(self.points_list[i])  # removes the point from its cluster
-                    self.points_list[i].set_cluster_number(closest_centroid)  # update the point's centroid value
-                    self.cluster_list[closest_centroid].add_point(self.points_list[i])
+                    # print("j " + str(j))
+                    self.cluster_list[current_cluster].remove_point(point)  # removes the point from its cluster
+                    point.set_cluster_number(closest_centroid)  # update the point's centroid value
+                    self.cluster_list[closest_centroid].add_point(point)
+            for clust in self.cluster_list:
+                clust.update_centroid()
             j = 1
+
         for k in range(3):
-            self.cluster_list[k].update_centroid()
+            # print("point #" + str(p.point_id) + " is in cluster " + str(p.cluster_number))
             print("Final for Centroid " + str(k))
             for pointaa in self.cluster_list[k].cluster_points:
                 print(pointaa.point_id)
