@@ -17,9 +17,6 @@ class Cluster:
         x2 = self.centroid_x
         y1 = point.point_y
         y2 = self.centroid_y
-        # print(str(x1) + "," + str(x2))
-        # print("Distance is " + str(np.sqrt(np.sum((x1-x2)**2)))
-        # print(round(np.sqrt(np.sum([(13-7)**2, (8-4)**2])),2))
         return round(np.sqrt(np.sum([(x2-x1)**2, (y2-y1)**2])), 2)
 
     def convergence_distance(self, old_centroid):
@@ -45,8 +42,5 @@ class Cluster:
 
         self.centroid_x = x_sum / len(self.cluster_points)
         self.centroid_y = y_sum / len(self.cluster_points)
-
-        # print("Centroid " + str(self.centroid_id) + ": " + str(self.centroid_x) + ", " + str(self.centroid_y))
-        return 1
 
 

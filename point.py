@@ -1,5 +1,5 @@
 class Point:
-    def __init__(self, point_id, point_x,point_y, cluster_number):
+    def __init__(self, point_id, point_x, point_y, cluster_number):
         self.point_id = point_id
         self.point_x = point_x
         self.point_y = point_y
@@ -9,10 +9,10 @@ class Point:
         return self.point_id
 
     def get_point(self):
-        return '{}{}{}'.format(self.point_x,',',self.point_y)
+        return '{}{}{}'.format(self.point_x, ',', self.point_y)
 
     def get_cluster(self):
         return self.cluster_number
 
-    def set_cluster_number(self,new_cluster_no):
+    def set_cluster_number(self, new_cluster_no):
         self.cluster_number = new_cluster_no
