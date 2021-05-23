@@ -1,5 +1,3 @@
-# machine-learning-k-means-clustering
-This is an implimention of the K-means clustering algorithm using python
 <h1 align="center"> Machine Learning K-Means clustering Algorithm</h1>
 
 <div align="center" >
