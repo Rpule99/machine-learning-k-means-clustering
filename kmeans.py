@@ -63,8 +63,8 @@ class kMeans:
                 for ids in self.cluster_list[i].cluster_points:
                     print(str(ids.point_id), end=",")
                 print("")
-                print("Centroid: " + "(" + str(round(self.cluster_list[i].centroid_x,2)) + ", " +
-                      str(round(self.cluster_list[i].centroid_y,2)) + ")")
+                print("Centroid: " + "(" + str(round(self.cluster_list[i].centroid_x, 2)) + ", " +
+                      str(round(self.cluster_list[i].centroid_y, 2)) + ")")
 
             old_centroids = []
             for cluster in self.cluster_list:

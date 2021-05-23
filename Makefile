@@ -21,6 +21,9 @@ help:
 
 # This generates the desired project file structure
 # A very important thing to note is that macros (or makefile variables) are referenced in the target's code with a single dollar sign ${}, but all script variables are referenced with two dollar signs $${}
+runKMeans:
+	. venv/bin/activate;
+	python3 kmeans.py
 setup:
 	
 	@echo "Checking if project files are generated..."
@@ -28,11 +31,14 @@ setup:
 	for FILE in ${FILES}; do \
 		touch "project_files.project/$${FILE}.txt"; \
 	done
-install: venv
-	venv/bin/activate; pip3 install -Ur requirements.txt
+install: venv 
+	( \
+		. venv/bin/activate; \
+		pip3 install -Ur requirements.txt; \
+	)
 
 venv:
-	test-d venv || python3 venv venv
+	test -d venv || python3 -m venv venv
 
 # This is a rule to delete our virtual environment as well as the compiled python bytecode"
 clean:
