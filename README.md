@@ -12,7 +12,7 @@
 * [Libraries Used](#libraries)
 * [Future Scope](#FutureScope)
 ## Description 
-*This is an implementation of the K-Means clustering algorithm written in Python. The numpy library is also used to calculate how similar points are to each other*
+*This is an implementation of the K-Means clustering algorithm written in Python. The numpy library is also used to calculate how similar data points are to each other*
   
 
 ## Project setup  
