@@ -39,7 +39,11 @@ number of iterations the algorithm goes through before it converges
 ```
 make runKMeans       // runs the program
 ```
+To exit the virtual environment run:
 
+```
+deactivate       // runs the program
+```
 ### Libraries Used
 * Numpy
 

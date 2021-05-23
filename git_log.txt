@@ -1,0 +1,120 @@
+commit 4702a7cc7680e2b1106d5c43321f80c3fc893bb9
+Merge: ee36843 7577d4a
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sun May 23 23:40:42 2021 +0200
+
+    Merge branch 'master' of https://github.com/zmaqutu/machine-learning-k-means-clustering
+
+commit ee368434036536689cc5b4a14b56af2c538ffb44
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sun May 23 23:40:05 2021 +0200
+
+    general housekeepking. Fixed Makefile
+
+commit 7577d4a61f412d42c061f49011cdf85c09aaaea5
+Author: Zongo Maqutu <zmaqutu@gmail.com>
+Date:   Sun May 23 23:38:37 2021 +0200
+
+    Create README.md
+
+commit d5215cb696286abec8f8303b5a3796663b8f8ba9
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sun May 23 17:42:35 2021 +0200
+
+    formated outputw
+
+commit 122f4da6f9d805beb9cf72a8a5572685771cf291
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sun May 23 16:28:15 2021 +0200
+
+    implemented convergence check method
+
+commit f264b1a16bb0a2b7059a41b749240836b28dea46
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sun May 23 13:08:40 2021 +0200
+
+    Successfuly implemented KMeans
+
+commit 4fe4959a2c31b4f2423e1194b7a64025528e414c
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sat May 22 23:41:33 2021 +0200
+
+    achieved desired behaviour for 1 iteration
+
+commit eeab4657e5ba1665e984d390b162c63b7c407ee0
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sat May 22 21:26:36 2021 +0200
+
+    fixed method to calculate distance
+
+commit 143a607da9cda04308fa19dfccb16c5684fe083a
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sat May 22 20:49:53 2021 +0200
+
+    added method to update centroid to mean of points
+
+commit a8404a57b96e08b13b34962b219c5b5df0585dca
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Sat May 22 20:13:44 2021 +0200
+
+    added functions to add and remove points from cluster
+
+commit afdb8f768ee1bb9b7d9266eece1f6f5da7ab020a
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Fri May 21 21:30:32 2021 +0200
+
+    added list comprehensions to get shortest distances
+
+commit 5feee864a760ac75ed20a2d1b7b124bebc8969d9
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Fri May 21 20:52:43 2021 +0200
+
+    restructured kmeans class
+
+commit d88caaf0bae43c64e94a809e471d33c3d1743ad6
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Fri May 21 19:07:28 2021 +0200
+
+    added methods to find closest cluster
+
+commit 86af3595e73002de7a38aaf6a5a3e4845a54ddd5
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Fri May 21 16:30:26 2021 +0200
+
+    created mapping from cluster to list of points
+
+commit 5c48f545b631b41bc1eea4270a08b955e96249eb
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Fri May 21 14:47:19 2021 +0200
+
+    implemented methods to generate point and cluster lists
+
+commit 6daa9f108744d5481c0a1e6efa75707b7c41683b
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Thu May 20 02:03:23 2021 +0200
+
+    created main method and created point objects
+
+commit f08e94c818a80365a2d57a2bdef028fcefb1ec2d
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Wed May 19 18:33:11 2021 +0200
+
+    Added first Point class
+
+commit e5855b5f0e4b21baa2ad52a23391d144ee3197e4
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Wed May 19 16:23:29 2021 +0200
+
+    Added a few rules to makefile, setting up file strucutre now
+
+commit 634ef4a250a4e3cdb114b32590f072d1f1e19217
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Wed May 19 16:03:22 2021 +0200
+
+    Added empty makefile, yet to configure
+
+commit d45e4ef7825d549ef19f027f83cee9792d046c75
+Author: Zongo Maqutu <MQTZON001@myuct.ac.za>
+Date:   Wed May 19 15:36:49 2021 +0200
+
+    initial commit, setting up venv and file structure
