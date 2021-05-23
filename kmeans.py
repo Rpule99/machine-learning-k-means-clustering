@@ -50,9 +50,19 @@ class kMeans:
         closest_centroid = np.argmin(distances)
         return closest_centroid
 
+    def is_converged(self, old_centroids, current_centroids):
+        distances = [current_centroids[i].convergence_distance(old_centroids[i]) for i in range(len(self.cluster_list))]
+        print(str(distances))
+        return sum(distances) == 0
+
     def run_k_means(self):
         j = 0
-        while j < 1:
+        while j < 10:
+            old_centroids = []
+            for cluster in self.cluster_list:
+                cluster_pair = (cluster.centroid_x, cluster.centroid_y)
+                old_centroids.append(cluster_pair)
+
             for point in self.points_list:
                 closest_centroid = self.find_closest_centroid(point)
                 current_cluster = point.cluster_number
@@ -64,7 +74,10 @@ class kMeans:
                     self.cluster_list[closest_centroid].add_point(point)
             for clust in self.cluster_list:
                 clust.update_centroid()
-            j = 1
+                # check for convergence
+            if self.is_converged(old_centroids, self.cluster_list):
+                break
+            j += 1
 
         for k in range(3):
             # print("point #" + str(p.point_id) + " is in cluster " + str(p.cluster_number))

@@ -20,7 +20,14 @@ class Cluster:
         # print(str(x1) + "," + str(x2))
         # print("Distance is " + str(np.sqrt(np.sum((x1-x2)**2)))
         # print(round(np.sqrt(np.sum([(13-7)**2, (8-4)**2])),2))
-        return round(np.sqrt(np.sum([(x2-x1)**2, (y2-y1)**2])),2)
+        return round(np.sqrt(np.sum([(x2-x1)**2, (y2-y1)**2])), 2)
+
+    def convergence_distance(self, old_centroid):
+        x1 = old_centroid[0]
+        x2 = self.centroid_x
+        y1 = old_centroid[1]
+        y2 = self.centroid_y
+        return round(np.sqrt(np.sum([(x2-x1)**2, (y2-y1)**2])), 2)
 
     def remove_point(self, point):
         if self.cluster_points.count(point) != 0:
